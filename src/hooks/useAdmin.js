@@ -6,7 +6,7 @@
 //     useEffect( () =>{
 //         const email = user?.email;
 //         if(email){
-//             fetch(`http://localhost:5000/admin/${email}`, {
+//             fetch(`https://secret-ravine-18127.herokuapp.com/admin/${email}`, {
 //                 method:'GET',
 //                 headers: {
 //                     'content-type': 'application/json',

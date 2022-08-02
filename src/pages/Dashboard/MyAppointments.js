@@ -9,7 +9,7 @@ const MyAppointments = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/booking?patient=${user.email}`)
+            fetch(`https://secret-ravine-18127.herokuapp.com/booking?patient=${user.email}`)
                 .then(res => res.json())
                 .then(data => setAppointments(data));
         }
