@@ -5,6 +5,9 @@ import { useForm } from "react-hook-form";
 import Loading from '../Shared/Loading';
 import { Link, useNavigate } from 'react-router-dom';
 import useToken from '../../hooks/useToken';
+// import { useSendEmailVerification } from 'react-firebase-hooks/auth';
+// import {createUserWithEmailAndPassword}
+
 
 const SignUp = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -14,14 +17,18 @@ const SignUp = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification: true});
+    
+    
+  
+      
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
     const [token]  = useToken(user || gUser);
 
     const navigate = useNavigate();
-
+   
     let signInError;
 
     if (loading || gLoading || updating) {
@@ -40,7 +47,11 @@ const SignUp = () => {
         await updateProfile({ displayName: data.name });
         console.log('update done');
         navigate('/appointment');
+        
+        
     }
+    
+
     return (
         <div className='flex h-screen justify-center items-center'>
             <div className="card w-96 bg-base-100 shadow-xl">

@@ -6,7 +6,7 @@ const useToken = user =>{
         const email = user?.user?.email;
         const currentUser = {email: email};
         if(email){
-            fetch(`https://secret-ravine-18127.herokuapp.com/user/${email}`, {
+            fetch(`http://localhost:5000/user/${email}`, {
                 method:'PUT',
                 headers: {
                     'content-type': 'application/json'
@@ -16,9 +16,9 @@ const useToken = user =>{
             .then(res=>res.json())
             .then(data => {
                 console.log('data inside useToken', data);
-                // const accessToken = data.token;
-                // localStorage.setItem('accessToken', accessToken);
-                // setToken(accessToken);
+                const accessToken = data.token;
+                localStorage.setItem('accessToken', accessToken);
+                setToken(accessToken);
             })
         }
 
