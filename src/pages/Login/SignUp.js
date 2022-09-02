@@ -10,17 +10,16 @@ import useToken from '../../hooks/useToken';
 
 
 const SignUp = () => {
+
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
+
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification: true});
-    
-    
-  
+    ] = useCreateUserWithEmailAndPassword(auth);
       
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
@@ -47,11 +46,8 @@ const SignUp = () => {
         await updateProfile({ displayName: data.name });
         console.log('update done');
         navigate('/appointment');
-        
-        
     }
     
-
     return (
         <div className='flex h-screen justify-center items-center'>
             <div className="card w-96 bg-base-100 shadow-xl">
@@ -75,7 +71,9 @@ const SignUp = () => {
                                 })}
                             />
                             <label className="label">
-                                {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
+                                {
+                                errors.name?.type === 'required' && <span className="label-text-alt text-red-500">
+                                    {errors.name.message}</span>}
                             </label>
                         </div>
 
@@ -100,10 +98,15 @@ const SignUp = () => {
                             />
                             <p className='text-red-500'>pattern: letter or number@letter.2 or 3 letter</p>
                             <label className="label">
-                                {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
-                                {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+                                {
+                                errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>
+                                }
+                                {
+                                errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>
+                                }
                             </label>
                         </div>
+
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
                                 <span className="label-text">Password</span>
@@ -125,9 +128,14 @@ const SignUp = () => {
                             />
                             <p className='text-red-500'>! Password must have at least 6 characters</p>
                             <label className="label">
-                                {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
-                                {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
+                                {
+                                errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>
+                                }
+                                {
+                                errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>
+                                }
                             </label>
+
                             <label className="label">
                                 <span className="label-text">Confirm Password</span>
                             </label>
@@ -149,10 +157,14 @@ const SignUp = () => {
                         </div>
 
                         {signInError}
+
                         <input className='btn w-full max-w-xs text-white mt-5' type="submit" value="Sign Up" />
                     </form>
+
                     <p><small>Already have an account? <Link className='text-primary' to="/login">Please login</Link></small></p>
+
                     <div className="divider">OR</div>
+
                     <button
                         onClick={() => signInWithGoogle()}
                         className="btn btn-outline"

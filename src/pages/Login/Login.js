@@ -7,8 +7,11 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import useToken from '../../hooks/useToken';
 
 const Login = () => {
+    
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+
     const { register, formState: { errors }, handleSubmit } = useForm();
+
     const [
         signInWithEmailAndPassword,
         user,
@@ -58,6 +61,7 @@ const Login = () => {
                                 placeholder="Your Email"
                                 className="input input-bordered w-full max-w-xs"
                                 {...register("email", {
+                                    // interact with hook form by giving a name then register, if error occured then show error msz
                                     required: {
                                         value: true,
                                         message: 'Email is Required'
@@ -69,10 +73,18 @@ const Login = () => {
                                 })}
                             />
                             <label className="label">
-                                {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
-                                {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+                                {/* error er jonno */}
+                                {
+                                errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>
+                                }
+
+                                {
+                                errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>
+                                }
                             </label>
+
                         </div>
+                        {/* password field */}
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
                                 <span className="label-text">Password</span>
@@ -93,16 +105,25 @@ const Login = () => {
                                 })}
                             />
                             <label className="label">
-                                {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
-                                {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
+                                {
+                                errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>
+                                }
+
+                                {
+                                errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>
+                                }
                             </label>
                         </div>
 
                         {signInError}
+
                         <input className='btn w-full max-w-xs text-white' type="submit" value="Login" />
                     </form>
+
                     <p><small>New to Doctors Portal <Link className='text-primary' to="/signup">Create New Account</Link></small></p>
+
                     <div className="divider">OR</div>
+
                     <button
                         onClick={() => signInWithGoogle()}
                         className="btn btn-outline"

@@ -9,19 +9,19 @@ const Services = () => {
 {
     _id:1,
     name:'Flouride Treatment',
-    description:'',
+    description:'Fluoride treatments are typically professional treatments containing a high concentration of fluoride that a dentist or hygienist will apply to a persons teeth to improve health and reduce the risk of cavities. ',
     img: flouride
 },
 {
     _id:2,
     name:'Cavity Filling',
-    description:'',
+    description:'cavity filling is when the dentist fills the opening in your tooth with some kind of material.',
     img: cavity
 },
 {
     _id:3,
     name:'Teeth whitening',
-    description:'',
+    description:'Teeth whitening involves bleaching your teeth to make them lighter. It can not make your teeth brilliant white.',
     img: whitening
 }
     ];

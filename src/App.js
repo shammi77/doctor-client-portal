@@ -35,6 +35,7 @@ function App() {
             </RequireAuth>
           }
         />
+        
         <Route
           path="dashboard"
           element={
