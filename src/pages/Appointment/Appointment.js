@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
+import React from 'react';
 import Footer from '../Shared/Footer';
 import AppointmentBanner from './AppointmentBanner';
-import AvailableAppointments from './AvailableAppointments';
+// import AvailableAppointments from './AvailableAppointments';
 
 
 const Appointment = () => {
-    <h2>hhh</h2>
-    const [date, setDate] = useState(new Date());
+ 
     return (
         <div>
-            <AppointmentBanner date={date} setDate={setDate}></AppointmentBanner>
-            <AvailableAppointments date={date}></AvailableAppointments>
+            <AppointmentBanner></AppointmentBanner>
+            {/* <AvailableAppointments date={date}></AvailableAppointments> */}
             <Footer></Footer>
         </div>
     );

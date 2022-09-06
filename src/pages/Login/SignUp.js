@@ -1,16 +1,14 @@
 import React from 'react';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-import { useForm } from "react-hook-form";
+import { useForm}  from "react-hook-form";
 import Loading from '../Shared/Loading';
 import { Link, useNavigate } from 'react-router-dom';
 import useToken from '../../hooks/useToken';
-// import { useSendEmailVerification } from 'react-firebase-hooks/auth';
-// import {createUserWithEmailAndPassword}
 
 
 const SignUp = () => {
-
+   
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
 
@@ -19,9 +17,8 @@ const SignUp = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification: true});
       
-
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
     const [token]  = useToken(user || gUser);
@@ -30,19 +27,20 @@ const SignUp = () => {
    
     let signInError;
 
-    if (loading || gLoading || updating) {
+    if (loading || gLoading || updating ) {
         return <Loading></Loading>
     }
 
-    if (error || gError || updateError) {
-        signInError = <p className='text-red-500'><small>{error?.message || gError?.message || updateError?.message}</small></p>
+    if (error || gError || updateError ) {
+        signInError = <p className='text-red-500'><small>{error?.message || gError?.message || updateError?.message }</small></p>
     }
     if (token) {
         navigate('/appointment');
     }
 
+ 
     const onSubmit = async data => {
-        await createUserWithEmailAndPassword(data.email, data.password);
+        await createUserWithEmailAndPassword(data.email, data.password);       
         await updateProfile({ displayName: data.name });
         console.log('update done');
         navigate('/appointment');
@@ -91,12 +89,12 @@ const SignUp = () => {
                                         message: 'Email is Required'
                                     },
                                     pattern: {
-                                        value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
+                                        value: /[a-z0-9]+@(gmail.com|yahoo.com)/,
                                         message: 'Provide a valid Email'
                                     }
                                 })}
                             />
-                            <p className='text-red-500'>pattern: letter or number@letter.2 or 3 letter</p>
+                           
                             <label className="label">
                                 {
                                 errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>
