@@ -2,7 +2,7 @@ import React from "react";
 
 const Review = ({ review }) => {
   return (
-    <div className="card lg:max-w-lg bg-base-100 shadow-xl">
+    <div className="card lg:max-w-lg bg-base-200 shadow-xl">
       <div className="card-body">
         <p>
           Dr Elaine Maxwell is content lead, National Institute for Health

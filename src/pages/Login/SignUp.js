@@ -5,7 +5,7 @@ import { useForm}  from "react-hook-form";
 import Loading from '../Shared/Loading';
 import { Link, useNavigate } from 'react-router-dom';
 import useToken from '../../hooks/useToken';
-
+import { toast } from 'react-toastify';
 
 const SignUp = () => {
    
@@ -29,21 +29,22 @@ const SignUp = () => {
 
     if (loading || gLoading || updating ) {
         return <Loading></Loading>
+        
     }
 
     if (error || gError || updateError ) {
         signInError = <p className='text-red-500'><small>{error?.message || gError?.message || updateError?.message }</small></p>
     }
     if (token) {
-        navigate('/appointment');
+        navigate('/appointment');    
     }
 
  
     const onSubmit = async data => {
-        await createUserWithEmailAndPassword(data.email, data.password);       
+        await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name });
-        console.log('update done');
-        navigate('/appointment');
+        // navigate('/appointment');
+        toast.success('Verification email sent')
     }
     
     return (
@@ -89,7 +90,7 @@ const SignUp = () => {
                                         message: 'Email is Required'
                                     },
                                     pattern: {
-                                        value: /[a-z0-9]+@(gmail.com|yahoo.com)/,
+                                        value: /[a-z0-9]+@(gmail.com|yahoo.com|lus.ac.bd)/,
                                         message: 'Provide a valid Email'
                                     }
                                 })}
@@ -156,9 +157,12 @@ const SignUp = () => {
 
                         {signInError}
 
-                        <input className='btn w-full max-w-xs text-white mt-5' type="submit" value="Sign Up" />
+                        <input className='btn w-full max-w-xs text-white mt-5' type="submit" value="Sign Up"  />
+                        
+                        
                     </form>
-
+                
+                    
                     <p><small>Already have an account? <Link className='text-primary' to="/login">Please login</Link></small></p>
 
                     <div className="divider">OR</div>

@@ -25,20 +25,24 @@ const Dashboard = () => {
 
         <ul className="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
           {/* <!-- Sidebar content here --> */}
-          {/* <li>
+          { <li>
             <Link to="/dashboard">My Appointments</Link>
-          </li> */}
+          </li> }
           <li>
-            <Link to="/dashboard">My Reviews</Link>
+            <Link to="/dashboard/reviews">My Reviews</Link>
           </li>
           <li>
             <Link to="/dashboard/history">My History</Link>
           </li>
-          {admin && (
+          {admin && 
+           <>
             <li>
               <Link to="/dashboard/users">All Users</Link>
+              <Link to="/dashboard/addDoctor">Add a Doctor</Link>
+              <Link to="/dashboard/manageDoctor">Manage Doctors</Link>
             </li>
-          )}
+           </>
+          }
         </ul>
       </div>
     </div>

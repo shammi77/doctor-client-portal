@@ -5,7 +5,7 @@ const UserRow = ({ user, refetch ,index}) => {
   const { email, role } = user;
 
   const removeUser =()=>{
-    fetch(`http://localhost:5000/user/${email}`,{
+    fetch(`http://localhost:5000/user/admin/${email}`,{
       method: 'DELETE',
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

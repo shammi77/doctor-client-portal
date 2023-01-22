@@ -16,15 +16,7 @@ const RequireAuth = ({ children }) => {
     // j location theke ashce setake reke dibo & replace korbo
     return <Navigate to="/login" state={{ from: location }} replace></Navigate>;
   }
-//   if (!user.emailVerified) {
-//     return (
-//       <div>
-//         <h3 className="text-primary">Your email is not verified</h3>
-//         <h5 className="text-primary">Please Verify Your Email</h5>
-//         <button>Send Verification Email</button>
-//       </div>
-//     );
-//   }
+
 
   return children;
 };
