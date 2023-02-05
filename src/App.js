@@ -19,6 +19,9 @@ import Review from "./pages/Review/Review";
 import ContactUs from "./pages/Contact Us/ContactUs";
 import AddDoctor from "./pages/Dashboard/AddDoctor";
 import ManageDoctors from "./pages/Dashboard/ManageDoctors";
+import Payment from "./pages/Dashboard/Payment";
+import AvailableServices from "./pages/Home/AvailableServices";
+
 // import RequireAdmin from "./pages/Login/RequireAdmin";
 
 function App() {
@@ -27,6 +30,8 @@ function App() {
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="services" element={<AvailableServices />} />
+        
         <Route path="about" element={<About />} />
         <Route path="review" element={<Review />} />
         <Route path="contact" element={<ContactUs />} />
@@ -49,6 +54,7 @@ function App() {
             <Route index element={<MyAppointments></MyAppointments>}></Route>
             <Route index element={<MyReview></MyReview>}></Route>
             <Route path="history" element={<MyHistory></MyHistory>}></Route>
+            <Route path="payment/:id" element={<Payment></Payment>}></Route>
             <Route path="reviews" element={<MyReview></MyReview>}></Route>
             <Route path="users" element={<Users></Users>}></Route>
             <Route path="addDoctor" element={<AddDoctor></AddDoctor>}></Route>

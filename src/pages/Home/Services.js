@@ -1,28 +1,25 @@
 import React from 'react';
-import flouride from '../../assets/images/fluoride.png';
-import cavity from '../../assets/images/cavity.png';
-import whitening from '../../assets/images/whitening.png';
 import Service from './Service';
 
 const Services = () => {
     const services = [
 {
     _id:1,
-    name:'Flouride Treatment',
-    description:'Fluoride treatments are typically professional treatments containing a high concentration of fluoride that a dentist or hygienist will apply to a persons teeth to improve health and reduce the risk of cavities. ',
-    img: flouride
+    name:'AMBULANCE SERVICE',
+    description:'Having a medical emergency can be a very frightening and critical experience. Our Hospital recognizes this and has equipped its Emergency Response Unit with ambulances that can be dispatched immediately following an emergency call.',
+    img: 'https://www.freepnglogos.com/uploads/ambulance-png/ambulance-quot-touch-truck-quot-community-event-temecula-education-16.png'
 },
 {
     _id:2,
-    name:'Cavity Filling',
-    description:'cavity filling is when the dentist fills the opening in your tooth with some kind of material.',
-    img: cavity
+    name:'PHARMACY',
+    description:'We have a pharmacy in the hospital premises which stocks a large range of medicines and provides logistical support to the medicinal needs of our patients.',
+    img:'https://w7.pngwing.com/pngs/785/135/png-transparent-green-cross-logo-pharmacy-computer-icons-health-care-pharmacy-text-logo-symmetry-thumbnail.png'
 },
 {
     _id:3,
-    name:'Teeth whitening',
-    description:'Teeth whitening involves bleaching your teeth to make them lighter. It can not make your teeth brilliant white.',
-    img: whitening
+    name:'CAFETERIA',
+    description:'For the convenience of our visitors, Al Haramain Hospital has several cafeterias scattered across the Hospitals floors to minimize the inconvenience of having to move from floor to floor in search of snacks and refreshments.',
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpsCGumAcbD--ZXXgybbLk-cvKVzPr70j85w&usqp=CAU'
 }
     ];
 

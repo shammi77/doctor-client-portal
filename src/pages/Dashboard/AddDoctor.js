@@ -36,7 +36,7 @@ const AddDoctor = () => {
             specialty: data.specialty,
             img: img
         }
-        // send to your database 
+        // send to  database 
         fetch('http://localhost:5000/doctor', {
             method: 'POST',
             headers: {
