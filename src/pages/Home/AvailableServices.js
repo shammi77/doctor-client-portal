@@ -4,8 +4,8 @@ const AvailableServices = () => {
   return (
     <div className="grid gap-10 m-4">
       <div>
-      <div class="hero min-h-screen bg-base-200">
-        <div class="hero-content flex-col lg:flex-row-reverse">
+      <div className="hero min-h-screen bg-base-200">
+        <div className="hero-content flex-col lg:flex-row-reverse">
           <img
             src="https://c3.thejournal.ie/media/2019/08/hospital-food-4-752x501.png"
             className="max-w-sm rounded-lg shadow-2xl"
@@ -35,8 +35,8 @@ const AvailableServices = () => {
       </div>
       </div>
       <div>
-      <div class="hero min-h-screen bg-base-200">
-        <div class="hero-content flex-col lg:flex-row-reverse">
+      <div className="hero min-h-screen bg-base-200">
+        <div className="hero-content flex-col lg:flex-row-reverse">
         <img
             src="https://v-tecs.org/wp-content/uploads/2018/08/bigstock-Man-And-Woman-Pharmacists-Work-237231235.jpg"
             className= "max-w-sm rounded-lg shadow-2xl"
@@ -53,8 +53,8 @@ const AvailableServices = () => {
       </div>
     </div>
     <div>
-      <div class="hero min-h-screen bg-base-200">
-        <div class="hero-content flex-col lg:flex-row-reverse">
+      <div className="hero min-h-screen bg-base-200">
+        <div className="hero-content flex-col lg:flex-row-reverse">
           <img
             src="https://purepng.com/public/uploads/large/purepng.com-ambulanceambulanceinjured-peoplefor-an-illness-or-injuryhospital-medicalambulances-17015274053493pgy3.png"
             className="max-w-sm rounded-lg shadow-2xl"

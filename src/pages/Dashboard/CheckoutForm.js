@@ -33,7 +33,6 @@ const CheckoutForm = ({ appointment }) => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-    
 
         if (!stripe || !elements) {
             return;
@@ -44,7 +43,7 @@ const CheckoutForm = ({ appointment }) => {
         if (card === null) {
             return;
         }
-
+//get credit card info
         const { error, paymentMethod } = await stripe.createPaymentMethod({
             type: 'card',
             card

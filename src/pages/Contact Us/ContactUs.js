@@ -1,10 +1,12 @@
 import React from 'react';
 import Contact from './Contact';
+import Footer from '../Shared/Footer';
 
 const ContactUs = () => {
     return (
         <div>
             <Contact></Contact>
+            <Footer></Footer>
         </div>
     );
 };
