@@ -16,11 +16,12 @@ const AddDoctor = () => {
 
   const imageStorageKey = 'e540d2236a3a2e69ab6aa48e3d080d89';
 
-  const onSubmit = async (data) => {
+  const onSubmit = async (data, event) => {
     const image = data.image[0];
     const formData = new FormData();
     formData.append('image', image);
     const url =`https://api.imgbb.com/1/upload?key=${imageStorageKey}`;
+
 
     fetch(url, {
       method: 'POST',
@@ -35,6 +36,7 @@ const AddDoctor = () => {
             email: data.email,
             specialty: data.specialty,
             img: img
+          
         }
         // send to  database 
         fetch('http://localhost:5000/doctor', {
@@ -67,8 +69,9 @@ const AddDoctor = () => {
     return <Loading></Loading>;
   }
   return (
-    <div>
-      <h2 className="text-2xl">Add new doctor</h2>
+    <><h2 className="text-2xl text-teal-800 m-5 font-bold flex justify-center item-center">Add new doctor</h2>
+    <div className="flex justify-center item-center ">
+      
       <form onSubmit={handleSubmit(onSubmit)}>
         
         <div className="form-control w-full max-w-xs">
@@ -171,7 +174,7 @@ const AddDoctor = () => {
           value="Add"
         />
       </form>
-    </div>
+    </div></>
   );
 };
 

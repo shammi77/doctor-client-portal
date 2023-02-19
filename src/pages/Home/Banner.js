@@ -1,25 +1,42 @@
 import React from "react";
-import chair from '../../assets/images/chair.png';
-import PrimaryButton from "../Shared/PrimaryButton";
+import DoctorBtn from "./DoctorBtn";
 
 const Banner = () => {
   return (
-    <div className="hero min-h-screen">
-      <div className="hero-content flex-col lg:flex-row-reverse">
-        <img src={chair}
-          className="max-w-sm rounded-lg shadow-2xl" alt=""
-        />
-        <div>
-          <h1 className="text-5xl font-bold">Your new smile starts here</h1>
-          <p className="py-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
-          </p>
-          <PrimaryButton>Get Started</PrimaryButton>
-        </div>
-      </div>
+    <div className=" w-full">
+      <div className="carousel w-full">
+  <div id="slide1" className="carousel-item relative w-full">
+    <img src="https://img.freepik.com/premium-photo/happy-medical-team-using-laptop-together_13339-250352.jpg?w=996" className="w-full mt-10" alt=""/>
+    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+      <a href="#slide4" className="btn btn-circle">❮</a> 
+      <a href="#slide2" className="btn btn-circle">❯</a>
     </div>
+  </div> 
+  <div id="slide2" className="carousel-item relative w-full">
+    <img src="https://img.freepik.com/free-photo/successful-medical-team_329181-9252.jpg?size=626&ext=jpg&ga=GA1.2.96353961.1675953229&semt=sph" className="w-full" alt=""/>
+    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+      <a href="#slide1" className="btn btn-circle">❮</a> 
+      <a href="#slide3" className="btn btn-circle">❯</a>
+    </div>
+  </div> 
+  <div id="slide3" className="carousel-item relative w-full">
+    <img src="https://img.freepik.com/free-photo/happy-doctor-holding-clipboard-with-patients_1098-2176.jpg?size=626&ext=jpg&ga=GA1.2.96353961.1675953229&semt=sph" className="w-full" alt=""/>
+    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+      <a href="#slide2" className="btn btn-circle">❮</a> 
+      <a href="#slide4" className="btn btn-circle">❯</a>
+    </div>
+  </div> 
+  <div id="slide4" className="carousel-item relative w-full">
+    <img src="https://img.freepik.com/premium-photo/group-doctors-nurses-standing-hospital-roomthe-concept-health_252847-11817.jpg?size=626&ext=jpg&ga=GA1.2.96353961.1675953229&semt=sph" className="w-full" alt=""/>
+    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+      <a href="#slide3" className="btn btn-circle">❮</a> 
+      <a href="#slide1" className="btn btn-circle">❯</a>
+    </div>
+  </div>
+</div>
+      <div><DoctorBtn></DoctorBtn></div>
+      
+      </div>
   );
 };
 

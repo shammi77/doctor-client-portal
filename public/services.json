@@ -20,7 +20,8 @@
       "4.00 PM - 4.30 PM",
       "4.30 PM - 5.00 PM"
     ],
-    "price": "150"
+    "price": "150",
+    "img":"https://img.freepik.com/free-photo/pleased-young-female-doctor-wearing-medical-robe-stethoscope-around-neck-standing-with-closed-posture_409827-254.jpg?size=626&ext=jpg&ga=GA1.2.96353961.1675953229&semt=sph"
   },
   {
     "_id": 2,
@@ -43,7 +44,8 @@
       "4.00 PM - 4.30 PM",
       "4.30 PM - 5.00 PM"
     ],
-    "price": "250"
+    "price": "250",
+    "img":"https://img.freepik.com/free-photo/portrait-smiling-male-doctor_171337-1532.jpg?size=626&ext=jpg&ga=GA1.2.96353961.1675953229&semt=sph"
   },
   {
     "_id": 3,
@@ -66,7 +68,8 @@
       "4.00 PM - 4.30 PM",
       "4.30 PM - 5.00 PM"
     ],
-    "price": "350"
+    "price": "350",
+    "img":"https://img.freepik.com/free-photo/young-lady-looking-pointing-copy-space_171337-5771.jpg?size=626&ext=jpg&ga=GA1.1.96353961.1675953229&semt=sph"
   },
   {
     "_id": 4,
@@ -89,7 +92,8 @@
       "4.00 PM - 4.30 PM",
       "4.30 PM - 5.00 PM"
     ],
-    "price": "450"
+    "price": "450",
+    "img":"https://img.freepik.com/free-photo/portrait-doctor_144627-39390.jpg?size=626&ext=jpg&ga=GA1.1.96353961.1675953229&semt=sph"
   },
   {
     "_id": 5,
@@ -112,7 +116,8 @@
       "4.00 PM - 4.30 PM",
       "4.30 PM - 5.00 PM"
     ],
-    "price": "550"
+    "price": "550",
+    "img":"https://img.freepik.com/free-photo/medium-shot-doctor-with-crossed-arms_23-2148868176.jpg?size=626&ext=jpg&ga=GA1.1.96353961.1675953229&semt=sph"
   },
   {
     "_id": 6,
@@ -135,6 +140,7 @@
       "4.00 PM - 4.30 PM",
       "4.30 PM - 5.00 PM"
     ],
-    "price": "650"
+    "price": "650",
+    "img":"https://img.freepik.com/free-photo/medium-shot-doctor-with-stethoscope_23-2148872974.jpg?size=626&ext=jpg&ga=GA1.1.96353961.1675953229&semt=sph"
   }
 ]

@@ -1,4 +1,5 @@
 import React from "react";
+
 import footer from "../../assets/images/footer.png";
 
 const Footer = () => {
@@ -13,13 +14,14 @@ const Footer = () => {
                 <a className="link link-hover">Branding</a>
                 <a className="link link-hover">Design</a>
                 <a className="link link-hover">Marketing</a>
-                <a className="link link-hover">Advertisement</a>
+                <a href="https://www.facebook.com/" className="link link-hover">Advertisement</a>
             </div>
             <div>
                 <span className="footer-title">Company</span>
-                <a className="link link-hover">About us</a>
-                <a className="link link-hover">Contact</a>
-                <a className="link link-hover">Press kit</a>
+                <a href="https://www.facebook.com/" className="link link-hover"> Facebook</a>
+                <a href="https://twitter.com/home" className="link link-hover"> Twiter</a>
+                <a href="https://www.linkedin.com/feed/" className="link link-hover">LinkedIn </a>
+                
             </div>
             <div>
                 <span className="footer-title">Legal</span>
@@ -29,7 +31,7 @@ const Footer = () => {
             </div>
         </div>
         <div className='my-10 text-center'>
-            <p>Copyright © 2022 - All right reserved </p>
+            <p>Copyright © 2023 - All right reserved </p>
         </div>
     </footer>
 );

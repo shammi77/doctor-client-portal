@@ -13,11 +13,8 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import MyAppointments from "./pages/Dashboard/MyAppointments";
-import MyReview from "./pages/Dashboard/MyReview";
-import MyHistory from "./pages/Dashboard/MyHistory";
 import Users from "./pages/Dashboard/Users";
-import Review from "./pages/Review/Review";
-import ContactUs from "./pages/Contact Us/ContactUs";
+
 import AddDoctor from "./pages/Dashboard/AddDoctor";
 import ManageDoctors from "./pages/Dashboard/ManageDoctors";
 import Payment from "./pages/Dashboard/Payment";
@@ -31,8 +28,19 @@ import Director from "./pages/About/Director";
 import Director1Details from "./pages/About/Director1Details";
 import Director2Details from "./pages/About/Director2Details";
 import Carousel from "./pages/About/Carousel";
+import DoctorBtn from "./pages/Home/DoctorBtn";
+import Medicines from "./pages/Home/Medicines";
+import MedicineRow from "./pages/Home/MedicineRow";
+import MedicineDetail from "./pages/Home/MedicineDetail";
+import Faq from "./pages/Home/Faq";
 
-// import RequireAdmin from "./pages/Login/RequireAdmin";
+import RequireAdmin from "./pages/Login/RequireAdmin";
+import Ourservices from "./pages/Home/Ourservices";
+import Diagnostics from "./pages/Home/Diagnostics";
+import Drugs from "./pages/Home/Drugs";
+import Paramedics from "./pages/Home/Paramedics";
+import Hospitals from "./pages/Home/Hospitals";
+import Contact from "./pages/Home/Contact";
 
 function App() {
   return (
@@ -54,8 +62,17 @@ function App() {
         <Route path="director2details" element={<Director2Details />} />
         <Route path="carousel" element={<Carousel />} />
        
-       <Route path="review" element={<Review />} />
-        <Route path="contact" element={<ContactUs />} />
+       <Route path="faq" element={<Faq />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="ourservices" element={<Ourservices />} />
+        <Route path="drugs" element={<Drugs />} />
+        <Route path="diagnostics" element={<Diagnostics />} />
+        <Route path="paramedics" element={<Paramedics/>} />
+        <Route path="hospitals" element={<Hospitals />} />
+        <Route path="doctorbtn" element={<DoctorBtn />} />
+        <Route path="mediciens" element={<Medicines />} />
+        <Route path="medicienRow" element={<MedicineRow />} />
+        <Route path="medicien/:medicienId" element={<MedicineDetail />} />
         <Route
           path="appointment"
           element={
@@ -73,11 +90,11 @@ function App() {
             </RequireAuth>
           }>
             <Route index element={<MyAppointments></MyAppointments>}></Route>
-            <Route index element={<MyReview></MyReview>}></Route>
-            <Route path="history" element={<MyHistory></MyHistory>}></Route>
+            
+            
             <Route path="payment/:id" element={<Payment></Payment>}></Route>
-            <Route path="reviews" element={<MyReview></MyReview>}></Route>
-            <Route path="users" element={<Users></Users>}></Route>
+            
+            <Route path="users" element={<RequireAdmin><Users></Users></RequireAdmin>}></Route>
             <Route path="addDoctor" element={<AddDoctor></AddDoctor>}></Route>
             <Route path="manageDoctor" element={<ManageDoctors></ManageDoctors>}></Route>
           </Route>

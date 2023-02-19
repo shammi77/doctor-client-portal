@@ -13,6 +13,7 @@ module.exports = {
           accent: "#3A4256",
           neutral: "#3A4256",
           "base-100": "#ffffff",
+          tahiti:'#22d3ee',
         },
       },
       "dark",

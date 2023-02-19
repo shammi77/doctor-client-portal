@@ -4,8 +4,8 @@ import { toast } from "react-toastify";
 const UserRow = ({ user, refetch ,index}) => {
   const { email, role } = user;
 
-  const removeUser =()=>{
-    fetch(`http://localhost:5000/user/admin/${email}`,{
+  const removeUser =(email)=>{
+    fetch(`http://localhost:5000/user/${email}`,{
       method: 'DELETE',
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -50,7 +50,7 @@ const UserRow = ({ user, refetch ,index}) => {
           </button>
         )}
       </td>
-      <td><button onClick={removeUser} className="btn btn-xs">Remove User</button></td>
+      <td><button onClick={()=>removeUser(email)} className="btn btn-xs">Remove User</button></td>
     </tr>
   );
 };
